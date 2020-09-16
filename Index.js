@@ -43,3 +43,33 @@ console.log(blue===white)
 // Null and notdefined
 
 // OBJECT TYPE
+
+
+// Array Data Regex map Set
+
+// objects are muitable
+
+// sntex:{}
+
+const obj = {};
+obj.Age = 25;
+
+console.log(obj);
+console.log(obj.Age);
+
+let obj2 = {
+    Name : "amit",
+    Class : "FinalYear",
+    age : 22
+
+};
+console.log(obj2);
+console.log(obj2.Name);
+
+// deleting properties 
+
+delete obj2.Name;
+
+
+console.log(obj2);
+console.log(obj2.Name);
