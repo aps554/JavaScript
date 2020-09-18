@@ -20,4 +20,12 @@ function sayHello(Name) {
     console.log('Hello '+Name);
 }
 
+let inpUser = document.getElementById("inpUser")
 let helloBtn = document.getElementById("helloBtn")
+
+helloBtn.onclick = function () {
+    document.getElementById('user')
+
+    let name = inpUser.value
+    alert('Hello '+ name)
+}
