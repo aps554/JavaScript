@@ -1,7 +1,7 @@
 {
   "name": "calc-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic calculator app",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1"
@@ -10,6 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "aps554",
   "license": "ISC"
 }

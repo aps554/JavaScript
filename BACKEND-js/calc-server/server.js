@@ -24,7 +24,10 @@ app.get('/calc/:op', (req, res)=>{
         case 'add': result = q1 + q2;break;
         case 'sub': result = q1 - q2;break;
         case 'mul': result = q1 * q2;break;
-        case 'div': result = q1 / q2;break;
+        case 'div': if (q2 == 0) {
+            console.error("devision by zero errror");
+            break;
+        } result = q1 / q2;break;
     }
 
     res.send(`
