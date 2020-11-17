@@ -21,6 +21,16 @@ console.log(f1(4));
 console.log(f1());
 
 
+const ob = {name:"AnnonymusFunction",
+            // invoke: function (name){
+            invoke (name){
+                console.log("you called me "+name);
+                return name;
+            }}
+
+console.log(ob.name);
+console.log(ob.invoke("amit"));
+
 /**
  * function object
  * const f = func(){
@@ -49,3 +59,32 @@ console.log(f1());
 
  f3(); 
  f4('amit');
+
+
+
+ const a = {
+     w1:"amit",
+     w2:"pratap",
+     w4:"singh",
+
+ }
+
+ console.log(a.w2);
+
+ function getdata({w1,w2,w4}){
+    return `${w1} ${w2} ${w4}`;
+ } 
+
+ console.log(getdata(a));
+
+
+
+ 
+ const arr = ["amit","pratap","singh"]
+
+
+function getdataa([w1,w2,w4]){
+   return `${w1} ${w2} ${w4}`;
+} 
+
+console.log(getdataa(arr));
