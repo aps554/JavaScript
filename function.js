@@ -88,3 +88,27 @@ function getdataa([w1,w2,w4]){
 } 
 
 console.log(getdataa(arr));
+
+
+
+function Magic(){
+    return `Welcome to ${this.name}`;
+}
+
+const onj1 = {name:"amit classes"};
+console.log(Magic.call(onj1));
+
+
+function Counter(){
+    let count = 0;
+    return () => {return ++count;}
+}
+
+let cc = Counter();
+console.log(cc());
+console.log(cc());
+console.log(cc());
+console.log(cc());
+
+console.log("\n");
+
