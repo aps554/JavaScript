@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Using HTMLreqeest object</h2>
+        <button type="button" class = "btn">Get response</button>
+    </div>
+
+    <script>
+        let btn = document.querySelector('.btn');
+        btn.addEventListener("click",call);
+
+        function call(){
+            const cxml = new XMLHttpRequest();
+            cxml.onreadystatechange = function(){
+                // console.log(this);
+                if(this.readyState == 4 && this.status==200){
+                    console.log(this.responseText);
+                    let data = JSON.parse(this.responseText);
+                    for(let key in data){
+                        console.log(`${key} is ${data[key]}`);
+                    }
+                }
+            };
+            cxml.open("GET","response.json",true);
+            cxml.send();
+        }
+    </script>
+</body>
+</html>

@@ -10,3 +10,4 @@ let div = $(".one");
 
 div[0].appendChild(para2[0]);
 console.log(div[0]);
+
