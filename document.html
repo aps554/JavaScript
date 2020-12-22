@@ -5,49 +5,63 @@
     <title>Document</title>
 
     <style>
-        .className{
-            padding : 1em 1.5em;
+        .className {
+            padding: 1em 1.5em;
             font-size: 3em;
             background-color: rgb(185, 229, 247);
             color: rgb(238, 48, 48);
         }
 
-        .togle_in{
+        .togle_in {
             color: cyan;
         }
 
-        .togle_out{
+        .togle_out {
             color: goldenrod;
+        }
+
+        input{
+            padding: 0.25em;
+            text-align: center;
+            font-size: 1.3em;
         }
     </style>
 </head>
 
 <body>
 
-    <nav class = "navbar" data-number = 1 data-name = "light"></nav>
-    <nav class = "navbar" data-number = 2 data-name = "dark"></nav>
+    <nav class="navbar" data-number=1 data-name="light"></nav>
+    <nav class="navbar" data-number=2 data-name="dark"></nav>
     <h1>Amit Pratap Singh</h1>
     <h3>Amit Pratap Singh</h3>
     <h5>Amit Pratap Singh</h5>
     <h7>Amit Pratap Singh</h7>
     <p id="para">
-    
+
     </p>
 
-    <div class = "content"></div>
-    
-    <input type="submit" class="submit" \>
+    <div class="content"></div>
 
-    <p id = "p2"></p>
+    <input type="submit" class="submit" onclick="display();" />
+
+    <button onclick="display()">Click Me</button>
+    <button class="btn">click from JS</button>
+
+    <p id="p2"></p>
+    <div id = "form">
+        <input type="text", placeholder="Name" />
+        <input type="text", placeholder="Number" />
+    </div>
+
     <div class="one">
-        <p id = "two"></p>
-        <p class = "two">Color this text</p>
-        <p class = "two">This is same</p>
-        <p class = "two"></p>
+        <p id="two"></p>
+        <p class="two">Color this text</p>
+        <p class="two">This is same</p>
+        <p class="two"></p>
 
     </div>
 
-    <script src="dataattribute.js"></script>
+    <script src="FocusBlur.js"></script>
 </body>
 
 </html>
