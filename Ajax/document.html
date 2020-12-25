@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Ajax</title>
 </head>
 <body>
     <div class="container">
@@ -10,6 +10,9 @@
     </div>
 
     <script>
+        let myDate = new Date();
+        console.log(`${myDate.getFullYear()}/${myDate.getMonth()}/${myDate.getDate()} ${myDate.getDay()}`);
+        console.log(`${myDate.getHours()}:${myDate.getMinutes()}:${myDate.getSeconds()}:${myDate.getMilliseconds()}`);
         let btn = document.querySelector('.btn');
         btn.addEventListener("click",call);
 
