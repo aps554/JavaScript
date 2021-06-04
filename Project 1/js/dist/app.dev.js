@@ -50,6 +50,10 @@ function deleteNote(index) {
   notesObj.splice(index, 1);
   localStorage.setItem("notes", JSON.stringify(notesObj));
   showNotes();
+  var search = document.getElementById("searchTxt");
+  console.log(search.value, 5);
+  search.value = "";
+  console.log(search.value, 5);
 } // let deleteBtn = document.getElementById("deleteBtn");
 // deleteBtn.addEventListener("click",function(e){
 //     deleteNote(index);

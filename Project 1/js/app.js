@@ -60,6 +60,11 @@ function deleteNote(index){
     notesObj.splice(index,1);
     localStorage.setItem("notes", JSON.stringify(notesObj));
     showNotes();
+    let search = document.getElementById("searchTxt");
+    
+    console.log(search.value,5);
+    search.value = "";
+    console.log(search.value,5);
 }
 
 // let deleteBtn = document.getElementById("deleteBtn");
