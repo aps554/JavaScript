@@ -8,25 +8,34 @@ let addBTn = document.getElementById("addBtn");
 
 addBTn.addEventListener("click", function (e) {
     let addTxt = document.getElementById("addTxt");
+    let addTitle = document.getElementById("addTitle");
     let notes = localStorage.getItem("notes");
+    let titles = localStorage.getItem("titles");
     if (notes == null) {
         notesObj = [];
+        titlesObj = [];
     } else {
         notesObj = JSON.parse(notes);
+        titlesObj = JSON.parse(titles);
     }
     notesObj.push(addTxt.value);
+    titlesObj.push(addTitle.value);
     localStorage.setItem("notes", JSON.stringify(notesObj));
+    localStorage.setItem("titles", JSON.stringify(titlesObj));
     addTxt.value = "";
-    // console.log(notesObj);
+    addTitle.value = "";
 
     showNotes();
 })
 
 function showNotes( ){
+    let titles = localStorage.getItem("titles");
     let notes = localStorage.getItem("notes");
     if (notes == null) {
+        titlesObj = [];
         notesObj = [];
     } else {
+        titlesObj = JSON.parse(titles);
         notesObj = JSON.parse(notes);
     }
 
@@ -36,7 +45,7 @@ function showNotes( ){
         html += `
         <div class="my-2 mx-2 cell" style="width: 18rem;">
             <div class="card-body">
-                <h5 class="card-title">Note ${index+1}</h5>
+                <h5 class="card-title">${titlesObj[index]}</h5>
                 <p class="card-text">${element}</p>
                 <button id = ${index} onclick = deleteNote(this.id) class="deleteBtn">Delete</button>
             </div>
@@ -55,16 +64,17 @@ function showNotes( ){
 }
 
 function deleteNote(index){
+    let titles = localStorage.getItem("titles");
     let notes = localStorage.getItem("notes");
     notesObj = JSON.parse(notes);
+    titlesObj = JSON.parse(titles);
     notesObj.splice(index,1);
+    titlesObj.splice(index,1);
     localStorage.setItem("notes", JSON.stringify(notesObj));
+    localStorage.setItem("titles", JSON.stringify(titlesObj));
     showNotes();
     let search = document.getElementById("searchTxt");
-    
-    console.log(search.value,5);
     search.value = "";
-    console.log(search.value,5);
 }
 
 // let deleteBtn = document.getElementById("deleteBtn");
@@ -108,9 +118,10 @@ search.addEventListener("input",function(){
     // }
 
     let noteCard = document.getElementsByClassName("cell");
-    Array.from(noteCard).forEach(function(element){
+    Array.from(noteCard).forEach(function(element,index){
         let cardText = element.getElementsByClassName("card-text")[0].innerText;
-        if(cardText.includes(inputVal)){
+        let titleText = element.getElementsByClassName("card-title")[0].innerText;
+        if(cardText.includes(inputVal) || titleText.includes(inputVal)){
             element.style.display = "block";
         }else{
             element.style.display = "none";
